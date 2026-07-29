@@ -1,0 +1,28 @@
+.btn-wishlist {
+
+    width: 29.85px;
+    height: 31.19px;
+    background-image: url(../icon/empty-bookmark.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -999em;
+    /* position: absolute; */
+    /* right: 1%;
+        top: 1%; */
+    padding: 0.4rem;
+    background-color: #c8b6db;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    line-height: 0.8rem;
+    z-index: 3;
+
+}
+
+.btn-wishlist.active {
+    background-image: url(../icon/full-bookmark.svg);
+}
