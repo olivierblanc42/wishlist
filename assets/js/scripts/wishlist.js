@@ -1,4 +1,80 @@
 
+function openModal() {
+
+    if (document.querySelector(".modal-login-required")) {
+        return;
+    }
+
+    const modal = document.createElement("div");
+    modal.classList.add("modal-login-required");
+
+    const modalContent = document.createElement("div");
+    modalContent.classList.add("modal-login-required_content");
+
+    modal.append(modalContent)
+
+    const modalLogin = document.createElement("div");
+    modalLogin.classList.add("modal-login");
+
+    modalContent.append(modalLogin)
+
+    const h3 = document.createElement("h3");
+    const newContent = document.createTextNode("Log In & Save Your Wishlist");
+    h3.appendChild(newContent);
+
+    const span = document.createElement("span");
+    const close = document.createTextNode("x");
+    span.appendChild(close);
+
+
+    const p = document.createElement("p");
+    modalLogin.append(h3, span, p)
+
+    h3.classList.add("modal-title");
+    span.classList.add("close-require");
+
+    const a = document.createElement("a");
+    a.textContent = "Log in";
+    a.href = wpData.loginUrl
+
+    const text = document.createTextNode("Log in to add items to your wishlist.");
+
+    p.append(a, text);
+    document.body.append(modal);
+    console.log(modal.outerHTML)
+}
+
+
+
+function initLoginModal() {
+    openModal();
+
+    const body = document.body;
+    const modal = document.querySelector(".modal-login-required");
+    const closeBtn = document.querySelector(".close-require");
+
+    document.querySelectorAll(".button-login-required").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            modal.classList.add("active");
+            body.style.overflow = "hidden";
+        });
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+        body.style.overflow = "scroll";
+    });
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("active");
+            body.style.overflow = "scroll";
+        }
+    });
+}
+
+initLoginModal();
+
 
 function addinWishList() {
 
@@ -9,7 +85,7 @@ function addinWishList() {
         const postId = btn.dataset.postId;
         try {
             if (!wpData.isLogin) {
-                alert("Vous devez être connecté");
+                openModal();
                 return;
             }
             const response = await fetch(url, {
@@ -25,9 +101,8 @@ function addinWishList() {
 
 
             if (!response.ok) {
-                alert("une erreur est survenue");
-                return;
 
+                return
             }
 
             if (!btn.classList.contains('active')) {
@@ -69,7 +144,7 @@ async function wishList() {
 
         const wishlist = await response.json();
 
-    
+
         const btns = document.querySelectorAll(".btn-test");
 
 
@@ -83,3 +158,8 @@ async function wishList() {
 
 
 // wichList()
+
+
+
+
+
