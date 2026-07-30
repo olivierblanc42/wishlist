@@ -26,3 +26,77 @@
 .btn-wishlist.active {
     background-image: url(../icon/full-bookmark.svg);
 }
+
+
+
+
+.modal-login-required {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow: hidden;
+
+}
+
+.modal-login-required.active {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-login-required_content {
+    margin-top: 180px;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    height: 160px;
+}
+
+.modal-login-required_content .close-require {
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    line-height: 0px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.modal-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 325px;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.modal-title {
+    background-color: #c6b7d9;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    padding: 10px;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.modal-login>p {
+    padding: 10px;
+    font-size: 15px;
+}
