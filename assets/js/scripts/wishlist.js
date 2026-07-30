@@ -47,10 +47,19 @@ function openModal() {
 
 
 function initLoginModal() {
-    openModal();
+    if (!wpData.isLogin) {
+        openModal();
+    }
+
+    const modal = document.querySelector(".modal-login-required");
+
+
+    if (!modal) {
+        return;
+    }
 
     const body = document.body;
-    const modal = document.querySelector(".modal-login-required");
+  
     const closeBtn = document.querySelector(".close-require");
 
     document.querySelectorAll(".button-login-required").forEach((btn) => {
@@ -85,7 +94,7 @@ function addinWishList() {
         const postId = btn.dataset.postId;
         try {
             if (!wpData.isLogin) {
-                openModal();
+                showLoginModal()
                 return;
             }
             const response = await fetch(url, {
@@ -162,4 +171,11 @@ async function wishList() {
 
 
 
+function showLoginModal() {
+    const modal = document.querySelector(".modal-login-required");
 
+    if (modal) {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+}
