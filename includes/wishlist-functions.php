@@ -99,21 +99,6 @@ function wishlist_button(int $postId)
 
 
 
-// Register the REST API endpoint to retrieve the user's wishlist
-// add_action('rest_api_init', function () {
-//     register_rest_route(
-//         'wishlist/v1',
-//         '/get',
-//         [
-//             'methods' => 'GET',
-//             'callback' => 'get_user_wishlist'
-//         ]
-//     );
-// });
-
-
-
-
 // Retrieve the current user's wishlist
 function get_user_wishlist()
 {
@@ -123,34 +108,43 @@ function get_user_wishlist()
     $wishlist = get_user_meta($userId, 'wishlist', true);
 
     // If the wishlist is not an array, initialize it as an empty array
-
     if (!is_array($wishlist)) {
         $wishlist = [];
     }
-
+    // Create an array to store the wishlist posts
     $postArray = [];
+
+    // Retrieve each post from the wishlist
 
     foreach ($wishlist as $postId) {
         $post = get_post($postId);
 
-
+         // Add the post object to the array
         if ($post) {
             $postArray[] = $post;
-        };
-    };
+        }
+    }
 
     return $postArray;
 }
 
 
+
+// Display the user's wishlist
 function display_wishlist()
 {
-    $postArray =   get_user_wishlist();
+    // Retrieve the wishlist posts
+    $postArray = get_user_wishlist();
 
+    // Display each wishlist item
     foreach ($postArray as $post) {
-        $post_id =  $post->ID;
+        $post_id = $post->ID;
 
-
-        echo get_the_post_thumbnail($post_id, 'thumbnail', array('class' => 'bounce_button'));
+        // Display the featured image
+        echo get_the_post_thumbnail(
+            $post_id,
+            'thumbnail',
+            array('class' => 'bounce_button')
+        );
     }
 }
