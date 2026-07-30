@@ -31,7 +31,8 @@ function wishlist_enqueue_scripts()
         [
             'nonce' => wp_create_nonce('wp_rest'),
             'apiUrl' => home_url('/wp-json/wishlist/v1/'),
-            'isLogin' => is_user_logged_in()
+            'isLogin' => is_user_logged_in(),
+            'loginUrl' => wp_login_url(),
         ]
     );
 
@@ -41,3 +42,6 @@ function wishlist_enqueue_scripts()
     );
 };
 add_action('wp_enqueue_scripts', 'wishlist_enqueue_scripts');
+
+
+
