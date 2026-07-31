@@ -61,7 +61,7 @@ function initLoginModal() {
   
     const closeBtn = document.querySelector(".close-require");
 
-    document.querySelectorAll(".button-login-required").forEach((btn) => {
+    document.querySelectorAll(".wishlist-button-login-required").forEach((btn) => {
         btn.addEventListener("click", () => {
             modal.classList.add("active");
             body.style.overflow = "hidden";
