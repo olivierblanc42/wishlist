@@ -6,11 +6,10 @@
     background-repeat: no-repeat;
     background-position: center;
     text-indent: -999em;
-    /* position: absolute; */
+    position: absolute;
     /* right: 1%;
         top: 1%; */
     padding: 0.4rem;
-    background-color: #c8b6db;
     font-size: 15px;
     text-align: center;
     margin-bottom: 0;
@@ -20,7 +19,7 @@
     font-weight: bolder;
     line-height: 0.8rem;
     z-index: 3;
-
+    background-color: transparent;
 }
 
 .btn-wishlist.active {
