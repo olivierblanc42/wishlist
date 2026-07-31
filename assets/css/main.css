@@ -17,6 +17,7 @@
     z-index: 3;
     background-color: transparent;
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .btn-wishlist:hover {
@@ -31,7 +32,7 @@
 
 .btn-wishlist.active:hover {
     background-image: url(../icon/empty-bookmark.svg);
-        transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 
