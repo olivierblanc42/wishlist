@@ -94,7 +94,7 @@ function wishlist_button(int $postId)
         }
     }
 
-    echo '<button class=" btn-wishlist button-login-required' . esc_attr($class) . '" data-post-id="' . esc_attr($postId) . '"></button>';
+    echo '<button class="btn-wishlist button-login-required' . esc_attr($class) . '" data-post-id="' . esc_attr($postId) . '"></button>';
 }
 
 
@@ -147,4 +147,8 @@ function display_wishlist()
             array('class' => 'bounce_button')
         );
     }
+}
+
+function     display_wishlist_button(){
+     wishlist_button(get_the_ID());
 }
