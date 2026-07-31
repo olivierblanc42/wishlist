@@ -94,7 +94,7 @@ function wishlist_button(int $postId)
         }
     }
 
-    echo '<button class="simplefavorite-button btn-wishlist button-login-required' . esc_attr($class) . '" data-post-id="' . esc_attr($postId) . '"></button>';
+    echo '<button class=" btn-wishlist button-login-required' . esc_attr($class) . '" data-post-id="' . esc_attr($postId) . '"></button>';
 }
 
 
