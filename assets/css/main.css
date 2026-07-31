@@ -31,6 +31,7 @@
 
 .btn-wishlist.active:hover {
     background-image: url(../icon/empty-bookmark.svg);
+        transform: scale(1.1);
 }
 
 
