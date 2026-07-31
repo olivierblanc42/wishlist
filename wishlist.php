@@ -6,8 +6,8 @@
  * Description: Add a wishlist system to a WordPress site.
  * Version:     1.0.0
  * Author:      Olivier Blanc
- * Author URI:  https://openclassrooms.com
- * Text Domain: administration
+ * Author URI:  https://github.com/olivierblanc42
+ * Text Domain: wishlist
  */
 
 

@@ -1,5 +1,5 @@
 
-function openModal() {
+function createmodal() {
 
     if (document.querySelector(".modal-login-required")) {
         return;
@@ -41,14 +41,13 @@ function openModal() {
 
     p.append(a, text);
     document.body.append(modal);
-    console.log(modal.outerHTML)
 }
 
 
 
 function initLoginModal() {
     if (!wpData.isLogin) {
-        openModal();
+        createmodal();
     }
 
     const modal = document.querySelector(".modal-login-required");
@@ -71,8 +70,8 @@ function initLoginModal() {
 
     closeBtn.addEventListener("click", () => {
         modal.classList.remove("active");
-        body.style.overflow = "scroll";
-    });
+        body.style.overflow = "";
+        });
 
     modal.addEventListener("click", (e) => {
         if (e.target === modal) {
@@ -90,7 +89,7 @@ function addinWishList() {
 
     const btns = document.querySelectorAll(".btn-wishlist");
     const url = wpData.apiUrl + 'toggle';
-    btns.forEach((btn) => btn.addEventListener("click", async (event) => {
+    btns.forEach((btn) => btn.addEventListener("click", async () => {
         const postId = btn.dataset.postId;
         try {
             if (!wpData.isLogin) {
@@ -131,42 +130,6 @@ function addinWishList() {
 addinWishList()
 
 
-async function wishList() {
-
-    const url = wpData.apiUrl + 'get';
-
-    try {
-
-        const response = await fetch(url, {
-            method: "GET",
-            headers: {
-                "X-WP-Nonce": wpData.nonce,
-            },
-
-
-        });
-
-        if (!response.ok) {
-            // throw new Error(`Response status: ${response.status}`);
-            // alert("Votre message");
-        }
-
-        const wishlist = await response.json();
-
-
-        const btns = document.querySelectorAll(".btn-test");
-
-
-
-
-    } catch (error) {
-        console.log(error);
-
-    }
-}
-
-
-// wichList()
 
 
 
