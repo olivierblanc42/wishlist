@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Plugin Name: Wishlist
+ * Plugin Name: WP Simple Wishlist
  * Plugin URI:  
  * Description: Add a wishlist system to a WordPress site.
  * Version:     1.0.0
  * Author:      Olivier Blanc
  * Author URI:  https://github.com/olivierblanc42
- * Text Domain: wishlist
+ * Text Domain: wp-simple-wishlist
  */
 
 
