@@ -5,9 +5,6 @@
     background-repeat: no-repeat;
     background-position: center;
     text-indent: -999em;
-    position: absolute;
-    right: 1%;
-    top: 1%;
     padding: 0.4rem;
     font-size: 15px;
     text-align: center;
@@ -19,12 +16,22 @@
     line-height: 0.8rem;
     z-index: 3;
     background-color: transparent;
+    transition: transform 0.2s ease;
 }
+
+.btn-wishlist:hover {
+    background-image: url(../icon/full-bookmark.svg);
+    transform: scale(1.1);
+}
+
 
 .btn-wishlist.active {
     background-image: url(../icon/full-bookmark.svg);
 }
 
+.btn-wishlist.active:hover {
+    background-image: url(../icon/empty-bookmark.svg);
+}
 
 
 
